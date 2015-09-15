@@ -64,7 +64,7 @@ if(@$_GET['go'] == 'logar'){
     } elseif(empty($senha)) {
         echo "<script>alert('Preencha todos os campos!'); history.back();</script>";
     } else{
-        $query1 = mysql_num_rows(mysql_query("SELECT * FROM USUARIO WHERE USUARIO = '$usuario' AND SENHA = '$senha'"));
+        $query1 = pg_numrows(pg_exec("SELECT * FROM USUARIO WHERE USUARIO = '$usuario' AND SENHA = '$senha'"));
     
         if($query1 == 1){
         $_SESSION['usuario_session'] = $usuario;
