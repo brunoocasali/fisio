@@ -38,19 +38,14 @@ if (!isset($_SESSION['usuario_session']) && !isset($_SESSION['senha_session'])){
 	mysql_select_db ("fisio");
 	
 	$resultado = mysql_query ("SELECT * FROM agenda ORDER BY data,horario ASC");
-	
 	$linhas = mysql_num_rows ($resultado);
 		
-	for ($i=0 ; $i<$linhas ; $i++)
-	
-	{
+	for ($i=0 ; $i<$linhas ; $i++){
 	
 	$reg = mysql_fetch_row($resultado);
 	
 	echo "Patologia: $reg[1] <br /> Profissional: $reg[2] <br /> Data: $reg[3] <br /> Horário: $reg[4]<hr />";
-	
-	}
-	
+}
 	mysql_close($conexao);
 
 ?>
