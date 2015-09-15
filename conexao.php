@@ -8,8 +8,4 @@ function pg_connection_string_from_database_url() {
 }
 
 $con = pg_connect(pg_connection_string_from_database_url()) or die("Não foi possível conectar com o servidor de dados!");
-
-echo "-----------------------------------------------------------\n\n";
-echo $_ENV["DATABASE_URL"];
-echo "-----------------------------------------------------------\n\n";
 ?>
