@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS fisio;
+USE DATABASE fisio;
+
+CREATE TABLE agenda (
+  id SERIAL NOT NULL PRIMARY KEY,
+  patologia character varying(20) NOT NULL,
+  profissional character varying(40) NOT NULL,
+  data date NOT NULL DEFAULT CURRENT_DATE,
+  horario time NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS cadastro (
+  id SERIAL NOT NULL,
+  paciente CHARACTER VARYING(60) NOT NULL,
+  nascimento date NOT NULL,
+  sexo CHARACTER VARYING(60) NOT NULL,
+  profissao CHARACTER VARYING(60) NOT NULL,
+  cpf CHARACTER VARYING(20) NOT NULL,
+  rg CHARACTER VARYING(20) NOT NULL,
+  endereco CHARACTER VARYING(60) NOT NULL,
+  numero INTEGER NOT NULL,
+  bairro CHARACTER VARYING(60) NOT NULL,
+  uf CHARACTER VARYING(5) NOT NULL,
+  cep CHARACTER VARYING(9) NOT NULL,
+  cidade CHARACTER VARYING(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS usuario (
+  usuario_id SERIAL NOT NULL,
+  usuario CHARACTER VARYING(60) NOT NULL,
+  senha CHARACTER VARYING(60) NOT NULL
+);
+
+INSERT INTO usuario (usuario_id, usuario, senha) VALUES
+(1, 'admin', 'admin');
